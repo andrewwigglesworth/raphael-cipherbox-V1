@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn client-side AES, XOR, DES, and Triple DES encryption concepts.">
+  <title>Encryption &amp; Decryption | Raphael CipherBox</title><link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="encryption">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><nav class="navbar container" aria-label="Primary navigation">
+    <a class="brand" href="index.html"><span class="brand-mark">R</span><span><strong>CipherBox</strong><small>by Raphael</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span></button>
+    <div class="nav-links" id="nav-links"><a href="index.html" data-nav="home">Home</a><a href="encoders.html" data-nav="encoders">Encoders &amp; Decoders</a><a href="encryption.html" data-nav="encryption">Encryption</a><a href="hashes.html" data-nav="hashes">Hash Tools</a><a href="jwt.html" data-nav="jwt">JWT &amp; Tokens</a><a href="network.html" data-nav="network">Network</a><a href="practice.html" data-nav="practice">Practice</a><a href="history.html" data-nav="history">History</a><a href="about.html" data-nav="about">About</a></div>
+  </nav></header>
+  <main id="main-content">
+    <section class="page-hero"><div class="container"><span class="eyebrow">Confidentiality concepts</span><h1>Encryption &amp; Decryption</h1><p>Experiment with modern browser cryptography and clearly labeled legacy learning simulations.</p></div></section>
+    <section class="section container">
+      <div class="notice warning"><strong>Security note</strong><p>Serious encryption requires reviewed libraries and secure key management—not random copy-pasted web tools created during mankind’s endless battle with text boxes.</p></div>
+      <article id="aes" class="tool-card card">
+        <div class="tool-card-header"><div><span class="badge badge-blue">Recommended demo</span><h2>AES-GCM</h2><p>Authenticated encryption using the browser’s native Web Crypto API.</p></div><span class="tool-icon blue">◇</span></div>
+        <div class="form-grid">
+          <div class="field full"><label for="aes-input">Plaintext or encrypted package</label><textarea id="aes-input" rows="6" placeholder="Enter text to encrypt, or paste a CipherBox AES package to decrypt"></textarea></div>
+          <div class="field"><label for="aes-key">Secret key / passphrase</label><input id="aes-key" type="password" autocomplete="new-password" placeholder="Use a long, unique passphrase"><button class="text-button reveal-key" type="button" data-target="aes-key">Show key</button></div>
+          <div class="field"><label for="aes-output">Output</label><textarea id="aes-output" rows="6" readonly placeholder="Result appears here"></textarea></div>
+        </div>
+        <div class="button-row"><button class="button button-primary" id="aes-encrypt">Encrypt</button><button class="button button-secondary" id="aes-decrypt">Decrypt</button><button class="button button-ghost" data-copy="aes-output">Copy output</button><button class="button button-ghost" data-clear-group="aes">Clear</button><button class="button button-ghost" id="aes-save">Save to history</button></div>
+        <details class="explanation"><summary>How this AES demo works</summary><div><p>AES-GCM provides confidentiality and integrity. CipherBox derives a 256-bit key from your passphrase with PBKDF2, then stores the random salt and initialization vector beside the ciphertext in a portable JSON package.</p><p><strong>Important:</strong> the password is never stored. Losing it means losing access to the encrypted data.</p></div></details>
+      </article>
+      <article id="legacy-crypto" class="tool-card card">
+        <div class="tool-card-header"><div><span class="badge badge-amber">Educational only</span><h2>XOR, DES &amp; Triple DES</h2><p>Compare reversible transformations and obsolete cipher concepts.</p></div><span class="tool-icon amber">⚠</span></div>
+        <div class="notice danger"><strong>DES warning</strong><p>DES is outdated and breakable. The DES and Triple DES options below are reversible Feistel-style learning simulations—not production implementations.</p></div>
+        <div class="form-grid">
+          <div class="field"><label for="legacy-algorithm">Algorithm</label><select id="legacy-algorithm"><option value="xor">XOR</option><option value="des">DES learning simulation</option><option value="3des">Triple DES learning simulation</option></select></div>
+          <div class="field"><label for="legacy-key">Custom key</label><input id="legacy-key" type="text" placeholder="Enter a key"></div>
+          <div class="field full"><label for="legacy-input">Input</label><textarea id="legacy-input" rows="5" placeholder="Enter plaintext or Base64-encoded output"></textarea></div>
+          <div class="field"><label for="legacy-raw">Raw/preview output</label><textarea id="legacy-raw" rows="5" readonly></textarea></div>
+          <div class="field"><label for="legacy-output">Base64 encoded output</label><textarea id="legacy-output" rows="5" readonly></textarea></div>
+        </div>
+        <div class="button-row"><button class="button button-primary" id="legacy-encrypt">Encrypt</button><button class="button button-secondary" id="legacy-decrypt">Decrypt</button><button class="button button-ghost" data-copy="legacy-output">Copy output</button><button class="button button-ghost" data-clear-group="legacy">Clear</button><button class="button button-ghost" id="legacy-save">Save to history</button></div>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><div><strong>CipherBox</strong><p>Cybersecurity utilities, explained.</p></div><p>Raphael · Educational tools only · <span data-year></span></p></div></footer><div class="toast-region" aria-live="polite"></div><script src="script.js"></script>
+</body>
+</html>
