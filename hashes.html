@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Generate and identify common cryptographic hashes.">
+  <title>Hash Tools | Raphael CipherBox</title><link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="hashes">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header"><nav class="navbar container" aria-label="Primary navigation"><a class="brand" href="index.html"><span class="brand-mark">R</span><span><strong>CipherBox</strong><small>by Raphael</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span></button><div class="nav-links" id="nav-links"><a href="index.html" data-nav="home">Home</a><a href="encoders.html" data-nav="encoders">Encoders &amp; Decoders</a><a href="encryption.html" data-nav="encryption">Encryption</a><a href="hashes.html" data-nav="hashes">Hash Tools</a><a href="jwt.html" data-nav="jwt">JWT &amp; Tokens</a><a href="network.html" data-nav="network">Network</a><a href="practice.html" data-nav="practice">Practice</a><a href="history.html" data-nav="history">History</a><a href="about.html" data-nav="about">About</a></div></nav></header>
+  <main id="main-content">
+    <section class="page-hero"><div class="container"><span class="eyebrow">One-way transformations</span><h1>Hash Tools</h1><p>Generate message digests and identify likely hash formats. Hashes are one-way; there is no such thing as a legitimate “hash decoder.”</p></div></section>
+    <section class="section container two-column-tools">
+      <article class="tool-card card">
+        <div class="tool-card-header"><div><h2>Hash generator</h2><p>Create a fixed-length digest from text.</p></div><span class="tool-icon cyan">#</span></div>
+        <div class="field"><label for="hash-input">Text to hash</label><textarea id="hash-input" rows="6" placeholder="Enter text"></textarea></div>
+        <div class="field"><label for="hash-algorithm">Algorithm</label><select id="hash-algorithm"><option>SHA-256</option><option>SHA-384</option><option>SHA-512</option><option>SHA-1</option><option>MD5</option></select></div>
+        <div class="field"><label for="hash-output">Digest</label><textarea id="hash-output" rows="5" readonly></textarea></div>
+        <div class="button-row"><button class="button button-primary" id="generate-hash">Generate hash</button><button class="button button-ghost" data-copy="hash-output">Copy</button><button class="button button-ghost" id="hash-save">Save to history</button></div>
+      </article>
+      <article class="tool-card card">
+        <div class="tool-card-header"><div><h2>Hash identifier</h2><p>Guess likely types from length and character pattern.</p></div><span class="tool-icon violet">?</span></div>
+        <div class="field"><label for="identify-input">Hash value</label><textarea id="identify-input" rows="6" placeholder="Paste a hexadecimal digest"></textarea></div>
+        <button class="button button-primary" id="identify-hash">Identify hash</button>
+        <div id="identify-result" class="result-panel" aria-live="polite"><p class="subtle">Possible formats will appear here.</p></div>
+      </article>
+    </section>
+    <section class="section container">
+      <div class="learning-grid">
+        <article class="card info-card"><h3>Salts</h3><p>A unique random salt makes identical passwords produce different hashes and frustrates precomputed attacks.</p></article>
+        <article class="card info-card"><h3>Collision resistance</h3><p>It should be computationally impractical to find two different inputs with the same digest.</p></article>
+        <article class="card info-card"><h3>Preimage resistance</h3><p>Given a digest, finding any original input that produced it should be impractical.</p></article>
+        <article class="card info-card"><h3>Password storage</h3><p>Use dedicated, slow password hashing functions such as Argon2id, scrypt, bcrypt, or PBKDF2—not a fast general-purpose hash alone.</p></article>
+      </div>
+      <div class="notice danger"><strong>Weak algorithms</strong><p>MD5 and SHA-1 have practical collision weaknesses and should not protect signatures, certificates, or other security-sensitive data. They remain here for compatibility and recognition exercises.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><div><strong>CipherBox</strong><p>Cybersecurity utilities, explained.</p></div><p>Raphael · Educational tools only · <span data-year></span></p></div></footer><div class="toast-region" aria-live="polite"></div><script src="script.js"></script>
+</body>
+</html>
