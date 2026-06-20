@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raphael CipherBox is a browser-based cybersecurity utility and learning toolkit.">
+  <title>Raphael CipherBox | Cybersecurity Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="CipherBox home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span><strong>CipherBox</strong><small>by Raphael</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Toggle navigation</span><span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="encoders.html" data-nav="encoders">Encoders &amp; Decoders</a>
+        <a href="encryption.html" data-nav="encryption">Encryption</a>
+        <a href="hashes.html" data-nav="hashes">Hash Tools</a>
+        <a href="jwt.html" data-nav="jwt">JWT &amp; Tokens</a>
+        <a href="network.html" data-nav="network">Network</a>
+        <a href="practice.html" data-nav="practice">Practice</a>
+        <a href="history.html" data-nav="history">History</a>
+        <a href="about.html" data-nav="about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Browser-based cybersecurity toolkit</span>
+          <h1>Decode, inspect, calculate, and learn—without leaving your browser.</h1>
+          <p>Raphael’s CipherBox brings practical security utilities and beginner-friendly explanations together in one polished workspace. Your data stays on your device.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="encoders.html">Explore the tools</a>
+            <a class="button button-secondary" href="practice.html">Start a challenge</a>
+          </div>
+          <p class="microcopy">Educational use only. Always obtain authorization before testing systems you do not own.</p>
+        </div>
+        <div class="hero-panel card" aria-label="CipherBox toolkit summary">
+          <div class="hero-panel-top">
+            <span class="status-dot"></span><span>Local workspace ready</span>
+            <span class="status-pill">No backend</span>
+          </div>
+          <div class="dashboard-preview">
+            <div class="preview-item"><span class="tool-icon">↔</span><div><strong>Encode &amp; Decode</strong><small>11 text transformations</small></div></div>
+            <div class="preview-item"><span class="tool-icon">◇</span><div><strong>Encrypt</strong><small>AES-GCM and learning demos</small></div></div>
+            <div class="preview-item"><span class="tool-icon">#</span><div><strong>Hash</strong><small>Identify and generate digests</small></div></div>
+            <div class="preview-item"><span class="tool-icon">⌁</span><div><strong>Analyze</strong><small>JWTs, IPs, and subnets</small></div></div>
+          </div>
+          <div class="privacy-strip"><span aria-hidden="true">✓</span> Inputs are processed locally in this tab.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured tools -->
+    <section class="section container">
+      <div class="section-heading">
+        <div><span class="eyebrow">Quick access</span><h2>Featured tools</h2></div>
+        <p>Jump directly into the utilities security learners and practitioners reach for most often.</p>
+      </div>
+      <div class="feature-grid">
+        <a class="feature-card card" href="encoders.html#base64"><span class="tool-icon blue">64</span><h3>Base64</h3><p>Encode and decode Base64 text with clear examples.</p><span class="card-link">Open tool →</span></a>
+        <a class="feature-card card" href="encryption.html#aes"><span class="tool-icon violet">◇</span><h3>AES</h3><p>Explore authenticated AES-GCM encryption locally.</p><span class="card-link">Open tool →</span></a>
+        <a class="feature-card card" href="hashes.html"><span class="tool-icon cyan">#</span><h3>SHA-256</h3><p>Create a modern one-way message digest.</p><span class="card-link">Open tool →</span></a>
+        <a class="feature-card card" href="jwt.html"><span class="tool-icon amber">{ }</span><h3>JWT Decoder</h3><p>Inspect token headers and payload claims safely.</p><span class="card-link">Open tool →</span></a>
+        <a class="feature-card card" href="network.html"><span class="tool-icon green">/24</span><h3>Subnet Calculator</h3><p>Find networks, broadcasts, and usable ranges.</p><span class="card-link">Open tool →</span></a>
+        <a class="feature-card card" href="practice.html"><span class="tool-icon rose">★</span><h3>Practice Mode</h3><p>Build fluency with guided security challenges.</p><span class="card-link">Start practice →</span></a>
+      </div>
+    </section>
+
+    <section class="section section-tinted">
+      <div class="container three-column">
+        <article><span class="number-badge">01</span><h3>Private by design</h3><p>Utilities run in your browser. CipherBox does not upload your inputs to a server.</p></article>
+        <article><span class="number-badge">02</span><h3>Learn while doing</h3><p>Expandable notes connect every transformation to practical security concepts.</p></article>
+        <article><span class="number-badge">03</span><h3>Built for every screen</h3><p>A responsive, accessible workspace works across desktops, tablets, and phones.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><div><strong>CipherBox</strong><p>Cybersecurity utilities, explained.</p></div><p>Raphael · Educational tools only · <span data-year></span></p></div>
+  </footer>
+  <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
